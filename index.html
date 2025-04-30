@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMARTWater – Stop Pollution</title>
+  <link sizes="900x900" rel="icon" sizes="" href="logo.jpeg" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #00796b;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      transition: opacity 1s ease-in;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #00796b;
+    }
+
+    .section p {
+      margin-bottom: 1rem;
+    }
+
+    .quote {
+      background: #f1f8e9;
+      border-left: 4px solid #689f38;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-style: italic;
+      color: #33691e;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      background: #004d40;
+      color: white;
+      margin-top: 4rem;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .img:hover {
+      scale: 1.2;
+      transform: rotate(30deg);
+    }
+
+    .middle-image-header:hover {
+      transform: rotate(-30deg);
+    }
+
+
+
+    .last-image-header:hover {
+      transform: rotate(-30deg);
+    }
+
+    /* Tooltip container */
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+      margin: auto;
+      /* Position the tooltip text - see examples below! */
+      position: absolute;
+      z-index: 1;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
+
+    .image-container {
+      display: flex;
+      gap: 30px;
+      /* Adjust the space as you like */
+    }
+
+    .last-image-header {
+      width: 190px;
+      height: 150px;
+      rotate: 270deg margin-bottom: 10
+    }
+
+    a {
+      color: #c4bcbc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #00a0c6;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .section {
+        margin: 2rem 1rem;
+      }
+    }
+
+    .water-fall-image {
+      margin-top: 15
+    }
+
+    .img-no-turn:hover {
+      transition: rotate(3deg)
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Set a background color */
+    body {
+      background-color: #474e5d;
+      font-family: Helvetica, sans-serif;
+    }
+
+    /* The actual timeline (the vertical ruler) */
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* The actual timeline (the vertical ruler) */
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: white;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+
+    /* Container around content */
+    .container {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+
+    /* The circles on the timeline */
+    .container::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: white;
+      border: 4px solid #FF9F55;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    /* Place the container to the left */
+    .left {
+      left: 0;
+    }
+
+    /* Place the container to the right */
+    .right {
+      left: 50%;
+    }
+
+    /* Add arrows to the left container (pointing right) */
+    .left::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid white;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
+    }
+
+    /* Add arrows to the right container (pointing left) */
+    .right::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+
+    /* Fix the circle for containers on the right side */
+    .right::after {
+      left: -16px;
+    }
+
+    /* The actual content */
+    .content {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+    }
+
+    /* Media queries - Responsive timeline on screens less than 600px wide */
+    @media screen and (max-width: 600px) {
+
+      /* Place the timelime to the left */
+      .timeline::after {
+        left: 31px;
+      }
+
+      /* Full-width containers */
+      .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+
+      /* Make sure that all arrows are pointing leftwards */
+      .container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+
+      /* Make sure all circles are at the same spot */
+      .left::after,
+      .right::after {
+        left: 15px;
+      }
+
+      /* Make all right containers behave like the left ones */
+      .right {
+        left: 0%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <h1 style="text-align:center;">SMARTWater</h1>
+      <img src="/waterfall.png" alt="logo" height="55" width="55" style="margin-bottom: 10px;" />
+    </div>
+    <p><i>Stop Pollution, Start A Revolution</i></p>
+    <small>A water pollution reduction project(By Zero2Hero)</small>
+  </header>
+
+  <section class="section">
+    <h2>The Problem</h2>
+    <p>
+      There is so much hiding behind the scenes of water pollution that
+      industry leaders want to hide from you. Though these companies have to
+      keep factories running to make money, this pollution has to be slowed
+      down.
+    </p>
+    <p>
+      According to the Federal Water Quality Control Board,
+      <strong>“Every day, more than 1.5 million people per state with a population
+        over 5 million in the United States go to bed every night without
+        clean drinking water.”</strong>
+      This is a big problem, yet it is currently being ignored.
+    </p>
+    <p>
+      The organizations that are working hard to stop this problem are also
+      being ignored.
+    </p>
+    <div class="quote">
+      “A survey revealed that more than three-quarters (77%) of parents are
+      concerned about the quality of water at their child's school.” – Clean
+      Water Action Program
+    </div>
+    <div class="image-container">
+      <div class="tooltip">
+        <img class="img" src="polluted_water.jpeg" alt="Polluted Water" />
+        <span class="tooltiptext">Dirty sewage water</span>
+      </div>
+      <div class="tooltip">
+        <img class="middle-image-header img" src="polluted_water2.jpeg" alt="Polluted Water" />
+        <span class="tooltiptext">Dirty pipes(caused by humans)</span>
+      </div>
+      <div class="tooltip">
+        <img class="img" src="polluted_water3.jpeg" alt="Polluted Water" />
+        <span class="tooltiptext">Beach Pollution</span>
+      </div>
+      <div class="tooltip">
+        <img src="polluted_water4.jpeg" class="last-image-header img" alt="Polluted Water" />
+        <span class="tooltiptext">Human caused pollution</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>About Me</h2>
+    <div>
+      <h4>Why Do I Care?</h4>
+      <p>I care because as I was studying for a test, I saw an article pop up on my computer about water pollution. In
+        curiosity, I clicked it. <strong>The stats about how many people go without clean drinking water astounded
+          me.</strong> I wanted to make a difference.</p>
+    </div>
+    <div>
+      <h4>Who Am I?</h4>
+      <p>My name is Shree M., and I'm a 14 year old in 8th grader, currently residing in the Bay Area. I love to make
+        websites and make an impact. So this was the perfect project for me.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Alternative Solutions</h2>
+    <p>
+      Stormwater management systems aim to capture and treat runoff before it
+      reaches streams, rivers, and lakes.
+    </p>
+    <p>
+      These systems can include rain gardens, permeable pavements, and
+      detention basins. According to Linquip, these systems help prevent
+      pollution and manage urban flooding. It is currently working in other
+      places.
+    </p>
+    <p>Our team is planning to use this solution, however, we want to see if we can<strong> treat it at the
+        source</strong>, instead of treating it right before it runs off. This is because we want to capture the source
+      and clean that spot up as much as possible to prevent future pollution.</p>
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+      <img class="img-no-turn" style="margin-bottom: 25px;" src="stormwaterrunoff.jpeg" />
+    </div>
+
+    <p>
+      <strong>When it’s working well:</strong> the water is <strong>cleaner, safer</strong>,
+      and <strong>ecosystems start to recover</strong>.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Our Proposed Solution</h2>
+    <p>
+      Our mission is to build a movement. Through awareness, education, and
+      direct action, we want to get people to know more about the problem, support clean
+      water legislation, and use better technology to stop water pollution. To do this,
+    </p>
+    <p>
+      <strong>SMARTWater</strong> aims to
+      create community-driven clean water projects. With an unlimited budget and no time constraints, we bet we, as a
+      community, could make a major difference by petitioning for stormwater runoff treatment. But, before this, to get
+      awareness, we need your help to tell your friends about this project. We will then share our idea with other water pollution organizations to get the funding to create a proper stormwater treatment system.
+    </p>
+  </section>
+  <section class="section">
+    <div class="timeline">
+      <div class="container left">
+        <div class="content">
+          <h2>May 10, 2025</h2>
+          <p>Finish writing/editing editorial</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>May 15, 2025</h2>
+          <p>Try to get a response back from at least one local newspaper</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>May 19, 2025</h2>
+          <p>Start planning water cleanup</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>June 19, 2025</h2>
+          <p>Tentative date for water cleanup</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>June-August, 2025</h2>
+          <p>Share idea with other water pollution organizations</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>August, 2025</h2>
+          <p>Requesting funding for stormwater management and treatment system installation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <h2>First Steps: Small Action Plan</h2>
+    <p>First steps are always important. So, the SMARTWater team has come up with the idea of creating an article. Before being able to petition and create the <strong>stormwater management system</strong>, we first have to gain interest in the idea. As a result, we built this webpage and are thinking of submitting an editorial to all local newspapers.</p>
+  </section><section class="section">
+    <h2>Do Your Part</h2>
+    <p>Whether organizations like us decide to take a move against water pollution or not, you must be willing to take action no matter what. <strong>Bad water affects you just as much as it affects us.</strong> So please, step up, do your part, so all the future generations can have a better life. It's not just about the future, it's about restoring the past and restoring nature. We need to bring out the beauty of Mother Nature, which is impossible with dirty water at every turn. <strong>Good luck, and let's make a difference!</strong></p>
+  </section>
+  <div class="footer">
+    © 2025 SmartWater. All rights reserved. <br />
+
+    <a target="_blank"
+      href="https://docs.google.com/document/d/1dyVpJj9Ec6yClDXikKehaMFfBykhp_GOmn857MOdE4Q/edit?usp=sharing">
+      &nbsp;Disclaimer</a>
+  </div>
+</body>
+
+</html>
